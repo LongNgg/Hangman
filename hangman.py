@@ -92,15 +92,17 @@ def file_lengthy(fname):
             pass
     f.close()
     return i + 1
-path_file = os.path.expanduser("~/Desktop/random.txt")
-lines = file_lengthy(path_file)
+# path_file = os.path.expanduser("~/Desktop/random.txt")
+lines = file_lengthy("random.txt")  #put random.txt in the same dir as the hangman.py; else, use the commented code above.
+
 #basically os.path.expanduser helps us access file path easily
 #notetoself: windows is a lot easier to access file with but with os module from python
 #mac os can be pretty easy too.
+
 import random
 ran = random.randint(1,lines)   #randomize the keyword
 
-for i, line in enumerate(open(path_file)): #here enumerate returns 2 values: i as the iterator counter and
+for i, line in enumerate(open("random.txt")): #here enumerate returns 2 values: i as the iterator counter and
     if i == ran:                                  #line as the content
         key = line
 key = key.lower()
@@ -154,11 +156,4 @@ while(state!=1):
         print_stage(tries)
         print("Word:",*answer)
         print("List of tried alphabet:",*Tried)
-
         print("\nTry again")
-
-
-
-
-
-
